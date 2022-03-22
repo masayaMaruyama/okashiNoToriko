@@ -15,16 +15,16 @@ class ViewController: UIViewController ,UISearchBarDelegate,UITableViewDataSourc
     }
     @IBOutlet weak var searchText: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-    var okashiArray : [Okashi] = []//Okashi構造体の配列
+    var okashiArray : [Okashi] = []
     ////////////////////////
-    struct ItemJson: Codable {
-        let name: String
-        let maker: String
-        let url: URL
-        let image: URL
-    }
     struct ResultJson: Codable {
         let item:[ItemJson]
+        struct ItemJson: Codable {
+            let name: String
+            let maker: String
+            let url: URL
+            let image: URL
+        }
     }
     struct Okashi {
         let name: String
@@ -45,7 +45,7 @@ class ViewController: UIViewController ,UISearchBarDelegate,UITableViewDataSourc
         else { return
         }
         AF.request("https://sysbird.jp/toriko/api/?apikey=guest&format=json&keyword=\(keyword_encode)&max=10&order=r")
-            .responseDecodable(of:ItemJson.self) { response in
+            .responseDecodable(of:ResultJson.ItemJson.self) { response in
                 guard let data = response.data else { return }
                 do {//エラー処理
                     let decoder = JSONDecoder()//インスタンスの取得(オブジェクトの作成)
@@ -56,8 +56,7 @@ class ViewController: UIViewController ,UISearchBarDelegate,UITableViewDataSourc
                         self.okashiArray.append(Okashi(name: item.name, maker: item.maker, link: item.url, image: item.image))
                     }
                     self.tableView.reloadData()//配列の再読み込み
-                    print("-----------------")
-                    print("okashiArray[0] = \(self.okashiArray.first!)")
+                    print("----------\nokashiArray[0] = \(self.okashiArray.first!)")
                 } catch {
                     print("エラーが出ました")//デバッグエリアへ出力
                 }
