@@ -13,6 +13,7 @@
 		6FA25A7227DA92DD006F9B85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FA25A7027DA92DD006F9B85 /* Main.storyboard */; };
 		6FA25A7427DA92DE006F9B85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FA25A7327DA92DE006F9B85 /* Assets.xcassets */; };
 		6FA25A7727DA92DE006F9B85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FA25A7527DA92DE006F9B85 /* LaunchScreen.storyboard */; };
+		D7C5DB33CE151AE5F3CE6694 /* Pods_okashiNoToriko.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF861ACA3DEF6B6DF958D040 /* Pods_okashiNoToriko.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		6FA25A7327DA92DE006F9B85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6FA25A7627DA92DE006F9B85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6FA25A7827DA92DE006F9B85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A85782B078667DB8E151997B /* Pods-okashiNoToriko.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-okashiNoToriko.debug.xcconfig"; path = "Target Support Files/Pods-okashiNoToriko/Pods-okashiNoToriko.debug.xcconfig"; sourceTree = "<group>"; };
+		DBAA74C97E425684390FC6F8 /* Pods-okashiNoToriko.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-okashiNoToriko.release.xcconfig"; path = "Target Support Files/Pods-okashiNoToriko/Pods-okashiNoToriko.release.xcconfig"; sourceTree = "<group>"; };
+		FF861ACA3DEF6B6DF958D040 /* Pods_okashiNoToriko.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_okashiNoToriko.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7C5DB33CE151AE5F3CE6694 /* Pods_okashiNoToriko.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C6A99CA945069526660BC76 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A85782B078667DB8E151997B /* Pods-okashiNoToriko.debug.xcconfig */,
+				DBAA74C97E425684390FC6F8 /* Pods-okashiNoToriko.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		6FA25A5E27DA92DD006F9B85 = {
 			isa = PBXGroup;
 			children = (
 				6FA25A6927DA92DD006F9B85 /* okashiNoToriko */,
 				6FA25A6827DA92DD006F9B85 /* Products */,
+				3C6A99CA945069526660BC76 /* Pods */,
+				980640ADCA225A8E3E306911 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +84,14 @@
 			path = okashiNoToriko;
 			sourceTree = "<group>";
 		};
+		980640ADCA225A8E3E306911 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF861ACA3DEF6B6DF958D040 /* Pods_okashiNoToriko.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6FA25A7B27DA92DE006F9B85 /* Build configuration list for PBXNativeTarget "okashiNoToriko" */;
 			buildPhases = (
+				3FA74CE3FBAA9851F71E149E /* [CP] Check Pods Manifest.lock */,
 				6FA25A6327DA92DD006F9B85 /* Sources */,
 				6FA25A6427DA92DD006F9B85 /* Frameworks */,
 				6FA25A6527DA92DD006F9B85 /* Resources */,
+				662ACF51AB144E9927A951EC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3FA74CE3FBAA9851F71E149E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-okashiNoToriko-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		662ACF51AB144E9927A951EC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-okashiNoToriko/Pods-okashiNoToriko-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-okashiNoToriko/Pods-okashiNoToriko-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-okashiNoToriko/Pods-okashiNoToriko-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6FA25A6327DA92DD006F9B85 /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		6FA25A7C27DA92DE006F9B85 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A85782B078667DB8E151997B /* Pods-okashiNoToriko.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +372,7 @@
 		};
 		6FA25A7D27DA92DE006F9B85 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBAA74C97E425684390FC6F8 /* Pods-okashiNoToriko.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
